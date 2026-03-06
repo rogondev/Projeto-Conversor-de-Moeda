@@ -27,7 +27,7 @@ public class Main {
                     break;
                 }
 
-                // Definindo as moedas de acordo com a opção (Fase 8 e 9)
+
                 String deMoeda = "";
                 String paraMoeda = "";
 
@@ -47,7 +47,6 @@ public class Main {
                 System.out.println("Digite o valor que deseja converter:");
                 double valor = leitura.nextDouble();
 
-                // Chamada à API e lógica de conversão (Fase 9)
                 Moeda dados = consulta.buscaMoeda(deMoeda);
                 double taxa = dados.conversion_rates().get(paraMoeda);
                 double resultadoFinal = valor * taxa;
@@ -57,7 +56,7 @@ public class Main {
 
             } catch (Exception e) {
                 System.out.println("Erro ao processar conversão: Valor inválido ou problema na rede.");
-                leitura.nextLine(); // Limpa o buffer do scanner
+                leitura.nextLine();
             }
         }
     }
